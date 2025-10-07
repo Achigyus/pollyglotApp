@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pollyglotapp</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav_img_cont">
+        <img src="#" alt="#" class="nav_img">
+      </div>
+      <div class="nav_text">
+        <h1 class="nav_h1">PollyGlot</h1>
+        <p class="nav_p">Perfect Translation Every Time</p>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="wrap">
+      <div class="translate_card">
+        <div class="rendered_chat" id="rendered_chat">
+          <p class="ai_text">Select the language you me to translate into, type your text and hit send!</p>
+          <!-- Rest of chat goes here -->
+        </div>
+        <form class="translate_form" id="translate_form">
+          <div class="top_input">
+            <input aria-label="Text input for translation" name="text_input" type="text" placeholder="Type your text here..." class="text_input" id="text_input" />
+            <button type="submit" class="send_btn" id="send_btn">Send</button>
+          </div>
+
+          <div class="btm_input">
+            <!-- Create radio buttons for language selection   -->
+            <div class="language_selection">
+              <label>
+                <input type="radio" name="language" value="French" checked />
+                French
+              </label>
+              <label>
+                <input type="radio" name="language" value="Spanish" />
+                Spanish
+              </label>
+              <label>
+                <input type="radio" name="language" value="Japanese" />
+                Japanese
+              </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div id="app"></div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
