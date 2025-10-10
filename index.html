@@ -6,17 +6,20 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pollyglotapp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <header class="header">
-    <nav class="nav">
+<body class="font-[Poppins] bg-[#F9F9F9] text-[#333333]">
+  <header class="header bg-[url('images/Frame7.svg')] bg-no-repeat bg-cover h-[213px] flex px-10 py-16 items-center justify-center">
+    <nav class="nav flex items-center gap-4">
       <div class="nav_img_cont">
-        <img src="#" alt="#" class="nav_img">
+        <img src="images/parrot.svg" alt="Parrot logo" class="nav_img">
       </div>
       <div class="nav_text">
-        <h1 class="nav_h1">PollyGlot</h1>
-        <p class="nav_p">Perfect Translation Every Time</p>
+        <h1 class="nav_h1 font-[Big_Shoulders] text-[#32CD32] font-extrabold text-[43px] leading-[1.5]">PollyGlot</h1>
+        <p class="nav_p text-white text-xs leading-[1.5] font-semibold">Perfect Translation Every Time</p>
       </div>
     </nav>
   </header>
@@ -30,23 +33,25 @@
         <form class="translate_form" id="translate_form">
           <div class="top_input">
             <input aria-label="Text input for translation" name="text_input" type="text" placeholder="Type your text here..." class="text_input" id="text_input" />
-            <button type="submit" class="send_btn cursor-pointer" id="send_btn">Send</button>
+            <button type="submit" class="send_btn cursor-pointer" id="send_btn">
+              <img src="images/send-btn.svg" alt="Send button icon" class="send_icon" />
+            </button>
           </div>
 
           <div class="btm_input">
             <!-- Create radio buttons for language selection   -->
-            <div class="language_selection">
+            <div class="language_selection flex justify-center items-center gap-4">
               <label>
                 <input type="radio" name="language" value="French" checked />
-                French
+                <img src="images/fr-flag.svg" alt="French flag" class="flag_icon" />
               </label>
               <label>
                 <input type="radio" name="language" value="Spanish" />
-                Spanish
+                <img src="images/sp-flag.svg" alt="Spanish flag" class="flag_icon" />
               </label>
               <label>
                 <input type="radio" name="language" value="Japanese" />
-                Japanese
+                <img src="images/jpn-flag.svg" alt="Japanese flag" class="flag_icon" />
               </label>
           </div>
           <button class="reset_btn cursor-pointer" id="reset_btn">Reset</button>
