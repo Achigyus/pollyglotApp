@@ -7,7 +7,7 @@ const textInput = document.getElementById('text_input') as HTMLInputElement;
 const resetBtn = document.getElementById('reset_btn') as HTMLButtonElement;
 
 resetBtn.addEventListener('click', () => {
-  renderedChat.innerHTML = `<p class="ai_text">Select the language you me to translate into, type your text and hit send!</p>`;
+  renderedChat.innerHTML = `<p class="ai_text bg-[#035A9D] rounded-t-[10px] rounded-b-[10px] rounded-tl-[2px] px-3.5 py-2.5 pb-5 text-white text-xl leading-[1.5] font-bold">Select the language you me to translate into, type your text and hit send!</p>`;
   textInput.value = '';
   textInput.focus();
 });
@@ -22,7 +22,7 @@ async function submitForm(e: Event) {
   if (!textToTranslate || !language) {
     return;
   }
-  renderChatItem(textToTranslate, 'human_text');
+  renderChatItem(textToTranslate, 'human_text bg-[#65DA65] rounded-t-[10px] rounded-b-[10px] rounded-tr-[2px] px-3.5 py-2.5 pb-5 text-[#333] text-xl leading-[1.5] font-bold');
   console.log(textToTranslate, language);
   const translatedText = await callAITranslate(textToTranslate, language);
   if (!translatedText) {
@@ -30,7 +30,7 @@ async function submitForm(e: Event) {
     textInput.focus();
     return;
   }
-  renderChatItem(translatedText, 'ai_text');
+  renderChatItem(translatedText, 'ai_text bg-[#035A9D] rounded-t-[10px] rounded-b-[10px] rounded-tl-[2px] px-3.5 py-2.5 pb-5 text-white text-xl leading-[1.5] font-bold');
   textInput.value = '';
 }
 

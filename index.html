@@ -8,11 +8,14 @@
   <title>pollyglotapp</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="font-[Poppins] bg-[#F9F9F9] text-[#333333]">
-  <header class="header bg-[url('images/Frame7.svg')] bg-no-repeat bg-cover h-[213px] flex px-10 py-16 items-center justify-center">
+  <header
+    class="header bg-[url('images/Frame7.svg')] bg-no-repeat bg-cover h-[213px] flex px-10 py-16 items-center justify-center">
     <nav class="nav flex items-center gap-4">
       <div class="nav_img_cont">
         <img src="images/parrot.svg" alt="Parrot logo" class="nav_img">
@@ -24,37 +27,47 @@
     </nav>
   </header>
   <main class="main">
-    <div class="wrap">
-      <div class="translate_card">
-        <div class="rendered_chat" id="rendered_chat">
-          <p class="ai_text">Select the language you me to translate into, type your text and hit send!</p>
+    <div class="wrap px-3.5 py-8">
+      <div class="translate_card flex flex-col gap-8 border-4 border-[#252F42] rounded-2xl px-6 pt-11 pb-5">
+        <div class="rendered_chat flex flex-col gap-8" id="rendered_chat">
+          <p
+            class="ai_text bg-[#035A9D] rounded-t-[10px] rounded-b-[10px] rounded-tl-[2px] px-3.5 py-2.5 pb-5 text-white text-xl leading-[1.5] font-bold">
+            Select the language you me to translate into, type your text and hit send!</p>
           <!-- Rest of chat goes here -->
         </div>
-        <form class="translate_form" id="translate_form">
-          <div class="top_input">
-            <input aria-label="Text input for translation" name="text_input" type="text" placeholder="Type your text here..." class="text_input" id="text_input" />
+        <form class="translate_form flex flex-col gap-5" id="translate_form">
+          <div
+            class="top_input focus-within:border-[#035A9D] focus-within:ring-2 focus-within:ring-[#035A9D]/20 border-[1.5px] border-[#586E88] rounded-[10px] bg-[#F5F5F5] px-4 py-5 flex justify-between items-center gap-3">
+            <input aria-label="Text input for translation" name="text_input" type="text"
+              placeholder="Type your text here..." class="text_input min-w-9/12 outline-none" id="text_input" />
             <button type="submit" class="send_btn cursor-pointer" id="send_btn">
               <img src="images/send-btn.svg" alt="Send button icon" class="send_icon" />
             </button>
           </div>
 
-          <div class="btm_input">
+          <div class="btm_input flex flex-col gap-5">
             <!-- Create radio buttons for language selection   -->
-            <div class="language_selection flex justify-center items-center gap-4">
+            <div class="language_selection flex justify-center items-center gap-10">
               <label>
-                <input type="radio" name="language" value="French" checked />
-                <img src="images/fr-flag.svg" alt="French flag" class="flag_icon" />
+                <input type="radio" name="language" value="French" checked class="peer sr-only" />
+                <img src="images/fr-flag.svg" alt="French flag"
+                  class="flag_icon border-[3px] border-transparent peer-checked:border-[3px] peer-checked:border-[#035A9D]" />
               </label>
               <label>
-                <input type="radio" name="language" value="Spanish" />
-                <img src="images/sp-flag.svg" alt="Spanish flag" class="flag_icon" />
+                <input type="radio" name="language" value="Spanish" class="peer sr-only" />
+                <img src="images/sp-flag.svg" alt="Spanish flag"
+                  class="flag_icon border-[3px] border-transparent peer-checked:border-[3px] peer-checked:border-[#035A9D]" />
               </label>
               <label>
-                <input type="radio" name="language" value="Japanese" />
-                <img src="images/jpn-flag.svg" alt="Japanese flag" class="flag_icon" />
+                <input type="radio" name="language" value="Japanese" class="peer sr-only" />
+                <img src="images/jpn-flag.svg" alt="Japanese flag"
+                  class="flag_icon border-[3px] border-transparent peer-checked:border-[3px] peer-checked:border-[#035A9D]" />
               </label>
+            </div>
+            <button
+              class="reset_btn cursor-pointer bg-[#035A9D] rounded-md font-bold text-2xl leading-[1.5] text-white py-3.5"
+              id="reset_btn">Reset</button>
           </div>
-          <button class="reset_btn cursor-pointer" id="reset_btn">Reset</button>
         </form>
       </div>
     </div>
