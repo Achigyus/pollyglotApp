@@ -21,7 +21,7 @@ PollyGlot is a lightweight web app for quick text translation into French, Spani
 
 ## Live Site
 A deployed version can be linked here. Replace the URL with your production site:
-https://yourdomain.example.com
+https://pollyglotapp.netlify.app/
 
 ## Local setup
 
