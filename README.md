@@ -20,7 +20,7 @@ PollyGlot is a lightweight web app for quick text translation into French, Spani
 - Static assets: SVG icons and images
 
 ## Live Site
-A deployed version can be linked here. Replace the URL with your production site:
+A deployed version can be linked here.
 https://pollyglotapp.netlify.app/
 
 ## Local setup
@@ -36,14 +36,8 @@ Quick start
 3. Install dependencies:
    npm install
 4. Start the dev server:
-   npm run dev
-5. Open the app in the browser (the dev server output will show the URL, e.g. http://localhost:5173)
-
-Build for production
-- npm run build
-- Serve the `dist/` folder with a static server.
-
-If your project does not include npm scripts, run a simple static server (e.g. `npx serve .`) or open `index.html` in a browser for basic testing.
+   ntl dev
+5. Open the app in the browser (the dev server output will show the URL, e.g. http://localhost:8888)
 
 ## Contributing (via Pull Request)
 1. Fork the repository.
