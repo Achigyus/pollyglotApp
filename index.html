@@ -3,19 +3,46 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pollyglotapp</title>
+  <title>PollyglotApp</title>
+
+  <!-- New metadata -->
+  <meta name="description" content="PollyGlot — quick, accurate translations into French, Spanish, and Japanese. Translate text easily with a friendly UI." />
+  <link rel="canonical" href="https://pollyglotapp.netlify.app/" />
+  <meta name="author" content="PollyGlot" />
+  <meta name="keywords" content="translation, language, French, Spanish, Japanese, translate, PollyGlot" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#035A9D" />
+
+  <!-- Open Graph (social preview) -->
+  <meta property="og:title" content="PollyGlot — Perfect Translation Every Time" />
+  <meta property="og:description" content="Translate text into French, Spanish, or Japanese quickly and accurately with PollyGlot." />
+  <meta property="og:image" content="https://pollyglotapp.netlify.app/images/og-image.png" />
+  <meta property="og:url" content="https://pollyglotapp.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PollyGlot" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PollyGlot — Perfect Translation Every Time" />
+  <meta name="twitter:description" content="Translate text into French, Spanish, or Japanese quickly and accurately with PollyGlot." />
+  <meta name="twitter:image" content="https://pollyglotapp.netlify.app/images/og-image.png" />
+  <meta name="twitter:creator" content="@PollyGlot" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 
-<body class="font-[Poppins] bg-[#F9F9F9] text-[#333333]">
+<body class="font-[Poppins] bg-[#EFF0F4] text-[#333333]">
   <header
-    class="header bg-[url('images/Frame7.svg')] bg-no-repeat bg-cover h-[213px] flex px-10 py-16 items-center justify-center">
+    class="md:max-w-3xl md:m-auto header bg-[url('images/Frame7.svg')] bg-no-repeat bg-cover h-[213px] flex px-10 py-16 items-center justify-center">
     <nav class="nav flex items-center gap-4">
       <div class="nav_img_cont">
         <img src="images/parrot.svg" alt="Parrot logo" class="nav_img">
@@ -26,13 +53,13 @@
       </div>
     </nav>
   </header>
-  <main class="main">
+  <main class="md:max-w-3xl md:m-auto main">
     <div class="wrap px-3.5 py-8">
       <div class="translate_card flex flex-col gap-8 border-4 border-[#252F42] rounded-2xl px-6 pt-11 pb-5">
         <div class="rendered_chat flex flex-col gap-8" id="rendered_chat">
           <p
             class="ai_text bg-[#035A9D] rounded-t-[10px] rounded-b-[10px] rounded-tl-[2px] px-3.5 py-2.5 pb-5 text-white text-xl leading-[1.5] font-bold">
-            Select the language you me to translate into, type your text and hit send!</p>
+            Select the language you want me to translate into, type your text and hit send!</p>
           <!-- Rest of chat goes here -->
         </div>
         <form class="translate_form flex flex-col gap-5" id="translate_form">
@@ -63,6 +90,7 @@
                 <img src="images/jpn-flag.svg" alt="Japanese flag"
                   class="flag_icon border-[3px] border-transparent peer-checked:border-[3px] peer-checked:border-[#035A9D]" />
               </label>
+              
             </div>
             <button
               class="reset_btn cursor-pointer bg-[#035A9D] rounded-md font-bold text-2xl leading-[1.5] text-white py-3.5"

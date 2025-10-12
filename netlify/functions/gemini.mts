@@ -18,6 +18,6 @@ export default async (req: Request, context: Context) => {
             maxOutputTokens: 1024,
         },
     });
-    console.log(response.text);
+    // console.log(response.text);
     return new Response(response.text, { status: 200 });
 };

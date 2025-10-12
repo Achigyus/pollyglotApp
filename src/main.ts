@@ -1,6 +1,4 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
 const translateForm = document.getElementById('translate_form') as HTMLFormElement;
 const renderedChat = document.getElementById('rendered_chat') as HTMLDivElement;
 const textInput = document.getElementById('text_input') as HTMLInputElement;
