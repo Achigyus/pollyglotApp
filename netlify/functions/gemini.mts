@@ -10,7 +10,7 @@ if (!apikey2) {
 }
 console.log("API Key loaded successfully", apiKey, apikey2);
 const ai = new GoogleGenAI({
-    apiKey: apiKey,
+    apiKey: apikey2,
 });
 
 export default async (req: Request, context: Context) => {
