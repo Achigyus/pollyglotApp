@@ -1,5 +1,13 @@
 import type { Context } from "@netlify/functions";
 import { GoogleGenAI } from "@google/genai";
+const apiKey = Netlify.env.get("VITE_GEMINI_API_KEY");
+if (!apiKey) {
+    throw new Error("Missing VITE_GEMINI_API_KEY environment variable");
+}
+const apikey2 = process.env.VITE_GEMINI_API_KEY;
+if (!apikey2) {
+    throw new Error("Missing VITE_GEMINI_API_KEY2 environment variable");
+}
 const ai = new GoogleGenAI({
     apiKey: Netlify.env.get("VITE_GEMINI_API_KEY")
 });
