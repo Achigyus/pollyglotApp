@@ -16,9 +16,8 @@ export default async (req: Request, context: Context) => {
         return new Response('Missing text or language', { status: 400 });
     }
     try {
-        const ai = await new GoogleGenAI({
-            apiKey: apikey2,
-        });
+        const ai = await new GoogleGenAI({});
+        console.log(ai)
         const response = await ai.models.generateContent({
             model: "gemini-2.5-flash",
             contents: `Translate the following text to ${language}: "${text}". Answer with just the translated text, no additional commentary and no formatting.`,
