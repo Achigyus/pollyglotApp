@@ -10,7 +10,7 @@ if (!apikey2) {
 }
 console.log("API Key loaded successfully", apiKey, apikey2);
 const ai = new GoogleGenAI({
-    apiKey: Netlify.env.get("VITE_GEMINI_API_KEY")
+    apiKey: apiKey,
 });
 
 export default async (req: Request, context: Context) => {
