@@ -8,6 +8,7 @@ const apikey2 = process.env.VITE_GEMINI_API_KEY;
 if (!apikey2) {
     throw new Error("Missing VITE_GEMINI_API_KEY2 environment variable");
 }
+console.log("API Key loaded successfully", apiKey, apikey2);
 const ai = new GoogleGenAI({
     apiKey: Netlify.env.get("VITE_GEMINI_API_KEY")
 });
