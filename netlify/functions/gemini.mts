@@ -9,11 +9,16 @@ if (!apikey2) {
     throw new Error("Missing VITE_GEMINI_API_KEY2 environment variable");
 }
 console.log("API Key loaded successfully", apiKey, apikey2);
-const ai = new GoogleGenAI({
-    apiKey: apikey2,
-});
 
 export default async (req: Request, context: Context) => {
+    try {
+        const ai = await new GoogleGenAI({
+            apiKey: apikey2,
+        });
+    } catch (error) {
+        console.error('Error initializing GoogleGenAI:', error);
+        return new Response('Error initializing AI', { status: 500 });
+    }
     const { text, language } = await req.json();
     if (!text || !language) {
         return new Response('Missing text or language', { status: 400 });
