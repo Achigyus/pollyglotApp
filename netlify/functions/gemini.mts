@@ -11,19 +11,14 @@ if (!apikey2) {
 console.log("API Key loaded successfully", apiKey, apikey2);
 
 export default async (req: Request, context: Context) => {
-    try {
-        const ai = await new GoogleGenAI({
-            apiKey: apikey2,
-        });
-    } catch (error) {
-        console.error('Error initializing GoogleGenAI:', error);
-        return new Response('Error initializing AI', { status: 500 });
-    }
     const { text, language } = await req.json();
     if (!text || !language) {
         return new Response('Missing text or language', { status: 400 });
     }
     try {
+        const ai = await new GoogleGenAI({
+            apiKey: apikey2,
+        });
         const response = await ai.models.generateContent({
             model: "gemini-2.5-flash",
             contents: `Translate the following text to ${language}: "${text}". Answer with just the translated text, no additional commentary and no formatting.`,
@@ -38,5 +33,4 @@ export default async (req: Request, context: Context) => {
         console.error('Error generating content:', error);
         return new Response('Error generating content', { status: 500 });
     }
-    // console.log(response.text);
 };
