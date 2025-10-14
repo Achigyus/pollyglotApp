@@ -1,11 +1,11 @@
 import './style.css'
-import { GoogleGenAI } from "@google/genai";
+// import { GoogleGenAI } from "@google/genai";
 const translateForm = document.getElementById('translate_form') as HTMLFormElement;
 const renderedChat = document.getElementById('rendered_chat') as HTMLDivElement;
 const textInput = document.getElementById('text_input') as HTMLInputElement;
-const ai = new GoogleGenAI({
-  apiKey: import.meta.env.VITE_GEMINI_API_KEY
-});
+// const ai = new GoogleGenAI({
+//   apiKey: import.meta.env.VITE_GEMINI_API_KEY
+// });
 const resetBtn = document.getElementById('reset_btn') as HTMLButtonElement;
 
 resetBtn.addEventListener('click', () => {
