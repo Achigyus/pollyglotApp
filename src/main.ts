@@ -44,15 +44,30 @@ function renderChatItem(text: string, className: string) {
 }
 
 async function callAITranslate(text: string, language: string) {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
-    contents: `Translate the following text to ${language}: "${text}". Answer with just the translated text, no additional commentary and no formatting.`,
-    config: {
-      systemInstruction: "You are pollyglot AI. Your aim is to assist users in translating text.",
-      temperature: 1.0,
-      maxOutputTokens: 1024,
+  // const response = await ai.models.generateContent({
+  //   model: "gemini-2.5-flash",
+  //   contents: `Translate the following text to ${language}: "${text}". Answer with just the translated text, no additional commentary and no formatting.`,
+  //   config: {
+  //     systemInstruction: "You are pollyglot AI. Your aim is to assist users in translating text.",
+  //     temperature: 1.0,
+  //     maxOutputTokens: 1024,
+  //   },
+  // });
+  // console.log(response.text);
+  // return response.text;
+    const response = await fetch('/.netlify/functions/gemini', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
     },
+    body: JSON.stringify({ text, language })
   });
-  console.log(response.text);
-  return response.text;
+  if (!response.ok) {
+    console.error('Error from AI service:', response.statusText);
+    return null;
+  }
+  const translatedText = await response.text();
+  console.log('Translated text:', translatedText);
+  return translatedText;
+
 }
