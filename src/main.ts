@@ -1,11 +1,7 @@
 import './style.css'
-// import { GoogleGenAI } from "@google/genai";
 const translateForm = document.getElementById('translate_form') as HTMLFormElement;
 const renderedChat = document.getElementById('rendered_chat') as HTMLDivElement;
 const textInput = document.getElementById('text_input') as HTMLInputElement;
-// const ai = new GoogleGenAI({
-//   apiKey: import.meta.env.VITE_GEMINI_API_KEY
-// });
 const resetBtn = document.getElementById('reset_btn') as HTMLButtonElement;
 
 resetBtn.addEventListener('click', () => {
@@ -44,18 +40,7 @@ function renderChatItem(text: string, className: string) {
 }
 
 async function callAITranslate(text: string, language: string) {
-  // const response = await ai.models.generateContent({
-  //   model: "gemini-2.5-flash",
-  //   contents: `Translate the following text to ${language}: "${text}". Answer with just the translated text, no additional commentary and no formatting.`,
-  //   config: {
-  //     systemInstruction: "You are pollyglot AI. Your aim is to assist users in translating text.",
-  //     temperature: 1.0,
-  //     maxOutputTokens: 1024,
-  //   },
-  // });
-  // console.log(response.text);
-  // return response.text;
-    const response = await fetch('/.netlify/functions/gemini', {
+  const response = await fetch('/.netlify/functions/gemini', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
